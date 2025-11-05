@@ -1,3 +1,5 @@
+Redux 테스트 코드
+
 //Presentational Component (프리젠테이션 컴포넌트)
 //UI를 보여주는 데만 집중하는 컴포넌트
 

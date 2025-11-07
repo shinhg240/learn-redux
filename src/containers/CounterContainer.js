@@ -9,7 +9,7 @@ import { decrease, increase, setDiff } from "../modules/counter";
 import Counter from "../components/Counter";
 
 function CounterContainer() {
-    //1. 리렌더링 일어나는 잘못된 예
+    //1. 리렌더링 일어나는 잘못된 예 > useSelecoter가 매번 새로운 객체를 반환해서
     // const { number, diff } = useSelector(state => ({
     //     number: state.counter.number,
     //     diff: state.counter.diff,
@@ -27,7 +27,7 @@ function CounterContainer() {
         // (left, right) => {
         //     return left.diff === right.diff && left.number === right.number;
         // }
-        shallowEqual,
+        shallowEqual, // 얕은 비교만 하기때문에 불변성 유지해서 상태 없데이트해주면 이거로 최적화 됨
     )
     
     const dispatch = useDispatch();

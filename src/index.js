@@ -12,7 +12,6 @@ import { composeWithDevTools } from '@redux-devtools/extension';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = createStore(rootReducer, composeWithDevTools());
-console.log(store.getState());
 
 root.render(
   // <React.StrictMode>

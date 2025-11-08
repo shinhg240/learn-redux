@@ -4,14 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import rootReducer from './modules';
-import { composeWithDevTools } from '@redux-devtools/extension';
+import { configureStore } from '@reduxjs/toolkit';
 
 // import './excercise';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = createStore(rootReducer, composeWithDevTools());
+// const store = createStore(rootReducer, composeWithDevTools()); > configureStore 내부에 포함
+
+const store = configureStore({
+  reducer:rootReducer,
+  devTools: process.env.NODE_ENV !== 'production', // DevTools 사용 여부 설정 가능
+});
 
 root.render(
   // <React.StrictMode>
